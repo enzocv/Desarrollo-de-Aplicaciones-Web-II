@@ -1,0 +1,43 @@
+﻿@model Laboratorio3_MVC_Catalan.Models.ClsRuleta
+@{
+    //Layout = null;
+    ViewBag.Title = "Juego de la Ruleta";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div> 
+        <h1><b><u>Juego de la Ruleta</u></b></h1>
+        <br /><br />
+        @using (Html.BeginForm("GenerarRuleta", "Ruleta", FormMethod.Post))
+        {
+            <p>
+                @Html.LabelFor(model => model.valor1, "Ruleta")
+            </p>
+            <br />
+            <button class="btn btn-success">Jugar</button>
+
+            if (Session["i"] == null)
+            {
+                Session["i"] = 1;
+                <h3>? - ? - ?</h3>
+            }
+            else
+            {
+                int contador = Convert.ToInt32(Session["i"]);
+                contador++;
+                Session["i"] = contador;
+                <h3>@Model.valor1 - @Model.valor2 - @Model.valor3</h3>
+            }
+        }
+        <br /><br />
+        <p>@Model.resultado</p>
+    </div>
+</body>
+</html>
