@@ -1,0 +1,31 @@
+﻿@model Laboratorio1_MVC_Catalan.Models.ClsSuma
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>Suma</h2>
+    <div>
+        <form name="frmsuma" action="MostrarSuma" method="post">
+            <label>Ingrese numero 1</label>
+            <input type="text" name="valor1" />
+
+            <br /><br />
+
+            <label>Ingrese numero 2</label>
+            <input type="text" name="valor2"/>
+
+            <br /><br />
+
+            <input type="submit" value="Resolver" />
+        </form>
+    </div>
+</body>
+</html>

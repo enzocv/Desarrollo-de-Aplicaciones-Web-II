@@ -1,0 +1,25 @@
+﻿@model Laboratorio1_MVC_Catalan.Models.ClsEstudiante
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MostrarDatosEstudiante</title>
+</head>
+<body>
+
+    <h2>Datos del Estudiante</h2>
+    <div> 
+        <label>Apellidos: </label>@Model.Apellido<br />
+        <label>Nombres: </label>@Model.Nombre<br />
+        <label>Edad: </label>@Model.Edad<br />
+        <label>Peso: </label>@Model.Peso<br />
+
+        <p>Nombre y Apellidos: @Model.Nombre @Model.Apellido </p>
+    </div>
+</body>
+</html>

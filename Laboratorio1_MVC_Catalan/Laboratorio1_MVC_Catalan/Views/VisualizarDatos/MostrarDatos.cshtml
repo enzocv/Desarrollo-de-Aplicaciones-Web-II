@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MostrarDatos</title>
+</head>
+<body>
+    <div> 
+        <b>Curso: </b>@ViewBag.Curso <br />
+        <b>Nombres y Apellidos: </b>@ViewBag.Nombre <br />
+        <b>Escuela: </b>@ViewData["Carrera"] <br />
+        <b>Fecha y Hora: </b>@ViewData["FechaHora"] <br />
+
+        <br />
+        <input type="text" value="@ViewBag.Nombre" />
+
+        <br /> <br />
+        @Html.TextBox("Curso    ", (String)ViewBag.Curso)
+        <br /> <br />
+        @Html.TextBox("Nombre", ViewData["Nombre"])
+    </div>
+</body>
+</html>
