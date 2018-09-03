@@ -1,0 +1,40 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio7
+@{
+    //Layout = null;
+    int cont = 0;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dibujar</title>
+</head>
+<body>
+    <div class="container"> 
+        <h1>Ejercicio 7</h1>
+    </div>
+
+    <div class="container">
+        @using (Html.BeginForm("Dibujar", "Ejercicio7", FormMethod.Post))
+        {
+            @Html.Label("indicar el numero de filas");
+            @Html.TextBoxFor(model => model.filas);
+
+            @Html.Label("indicar el simbolo");
+            @Html.TextBoxFor(model => model.simbolo);
+
+            <div class="container">
+                <button>Graficar</button>
+            </div>
+            <div class="container">
+                @foreach (string item in Model.grafico)
+                {
+                    <spam> @item </spam><br />
+                }
+            </div>
+        }
+    </div>
+</body>
+</html>

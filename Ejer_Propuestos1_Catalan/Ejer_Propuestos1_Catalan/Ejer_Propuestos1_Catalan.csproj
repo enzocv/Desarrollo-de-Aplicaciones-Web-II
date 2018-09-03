@@ -99,11 +99,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Ejercicio5Controller.cs" />
     <Compile Include="Controllers\Ejercicio6Controller.cs" />
+    <Compile Include="Controllers\Ejercicio7Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ClsEjercicio5.cs" />
     <Compile Include="Models\ClsEjercicio6.cs" />
+    <Compile Include="Models\ClsEjercicio7.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +119,7 @@
     <Content Include="Views\Ejercicio5\CalcularPension.cshtml" />
     <Content Include="Views\_Viewstart.cshtml" />
     <Content Include="Views\Ejercicio6\Calcular.cshtml" />
+    <Content Include="Views\Ejercicio7\Dibujar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
