@@ -1,7 +1,6 @@
 ﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio7
 @{
     //Layout = null;
-    int cont = 0;
 }
 
 <!DOCTYPE html>
@@ -10,31 +9,64 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Dibujar</title>
+    <style>
+        .grafico{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1.5em;
+            width:50em;
+            font-size: 1.5em;
+        }
+    </style>
 </head>
 <body>
     <div class="container"> 
         <h1>Ejercicio 7</h1>
     </div>
 
-    <div class="container">
-        @using (Html.BeginForm("Dibujar", "Ejercicio7", FormMethod.Post))
-        {
-            @Html.Label("indicar el numero de filas");
-            @Html.TextBoxFor(model => model.filas);
+    <div class="container mod2">
+        <div class="rec1">
+            @using (Html.BeginForm("Dibujar", "Ejercicio7", FormMethod.Post))
+            {
+                @Html.Label("indicar el numero de filas"); <br />
+                @Html.TextBoxFor(model => model.filas);<br />
 
-            @Html.Label("indicar el simbolo");
-            @Html.TextBoxFor(model => model.simbolo);
+                @Html.Label("indicar el simbolo");<br />
+                @Html.TextBoxFor(model => model.simbolo);<br />
 
-            <div class="container">
-                <button>Graficar</button>
-            </div>
-            <div class="container">
-                @foreach (string item in Model.grafico)
-                {
-                    <spam> @item </spam><br />
-                }
-            </div>
-        }
+                <div class="container" style="margin: 1em auto">
+                    <br />
+                    <button>Graficar</button>
+                </div>
+
+                <div class="">
+                    @Html.Label("alinear"); <br />
+
+                    <label>
+                        <input type="radio" value="derecha" name="radio"
+                               onclick="document.getElementById('map').style.alignItems ='flex-start'" />
+                        Izquierda
+                    </label>
+                    <label>
+                        <input type="radio" value="center" name="radio"
+                               onclick="document.getElementById('map').style.alignItems ='center'" />
+                        Centro
+                    </label>
+                    <label>
+                        <input type="radio" value="center" name="radio"
+                               onclick="document.getElementById('map').style.alignItems ='flex-end'" />
+                        Derecha
+                    </label>
+                </div>
+
+                <div class="grafico" id="map">
+                    @foreach (string item in Model.grafico)
+                    {
+                        <div> @item </div><br />
+                    }
+                </div>
+            }
+        </div>
     </div>
 </body>
 </html>
