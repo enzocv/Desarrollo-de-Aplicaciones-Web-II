@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejer_Propuestos1_Catalan", "Ejer_Propuestos1_Catalan\Ejer_Propuestos1_Catalan.csproj", "{2DF77C62-AC9A-48F7-8AD9-DC11F6F63F04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DF77C62-AC9A-48F7-8AD9-DC11F6F63F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF77C62-AC9A-48F7-8AD9-DC11F6F63F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF77C62-AC9A-48F7-8AD9-DC11F6F63F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF77C62-AC9A-48F7-8AD9-DC11F6F63F04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {929307E4-62ED-4D32-8977-40F91589D974}
+	EndGlobalSection
+EndGlobal

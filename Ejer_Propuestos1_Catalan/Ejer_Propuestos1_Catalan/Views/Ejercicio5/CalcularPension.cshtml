@@ -1,0 +1,47 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio5
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalcularPension</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 1</h1>
+    </div>
+
+    <div class="container">
+        @using (@Html.BeginForm("CalcularPension", "Ejercicio5", FormMethod.Post))
+        {
+            <div class="container">
+                <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos1") 2 Hijos</label>
+                <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos2") 3 a 5 Hijos</label>
+                <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos3") 6 a más Hijos</label>
+
+                <br /><br />
+
+                <label>Cantidad de Hijos en edad escolar (6 a 18 años)</label><br />
+                @Html.EditorFor(model => model.cantHijosEscu)
+
+                <br /><br />
+
+                <label>@Html.RadioButtonFor(model => model.viuda, "Viuda") Viuda</label>
+            </div>
+
+            <br /><br />
+
+            <div>
+                <p>Pensión: S/. @Model.pension</p>
+            </div>
+
+            <button>Calcular</button>
+        }
+    </div>
+
+</body>
+</html>
