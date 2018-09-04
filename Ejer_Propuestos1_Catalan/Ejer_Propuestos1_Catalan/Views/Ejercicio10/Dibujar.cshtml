@@ -1,0 +1,80 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio10
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dibujar</title>
+    <style>
+        #lienzo1 {
+            border: solid #989898 2.5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Brújula</h2>
+        </div>
+        <div class="panel-body">
+            <div>
+                <input type="text" id="X" value="@Model.posX" />
+                <input type="text" id="Y" value="@Model.posY" />
+            </div>
+
+            <div>
+                <button onclick="ubicacion();">Dibijar</button>
+            </div>
+
+            <div class="dibujo-canvas">
+                <canvas id="lienzo1" width="300" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+      plano();
+      function plano(){
+        ej1=document.getElementById("lienzo1");
+        lienzo1=ej1.getContext("2d");
+        lienzo1.lineWidth=1;
+        lienzo1.strokeStyle = '#000';
+
+      //EJEX
+        lienzo1.beginPath();
+        lienzo1.moveTo(150,0);
+        lienzo1.lineTo(150,300);
+        lienzo1.stroke();
+        lienzo1.closePath();
+      //EJE Y
+        lienzo1.beginPath();
+        lienzo1.moveTo(0,150);
+        lienzo1.lineTo(300,150);
+        lienzo1.stroke();
+        lienzo1.closePath();
+        }
+        function ubicacion() {
+            //pos X Y
+            //centro 137,137
+
+            var px = document.getElementById('X').value;
+            var py = document.getElementById('Y').value;
+
+            //actualizar();
+            plano();
+
+            lienzo1.fillStyle = 'green';
+            lienzo1.fillRect(px, py, 25, 25);
+        }
+
+        function actualizar() { location.reload(true); }
+
+    </script>
+
+</body>
+</html>
