@@ -1,0 +1,42 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio9
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalcularBilletes</title>
+</head>
+<body>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Cajero</h2>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm("CalcularBilletes", "Ejercicio9", FormMethod.Post))
+            {
+                @Html.Label("Ingresar el Monto a retirar"); <br />
+                @Html.EditorFor(model => model.monto);
+
+            <div>
+                <button>Resultado</button>
+                <button onclick="window.close();">Salir</button>
+            </div>
+
+            <div>
+                @for (int i = 0; i < 1; i++)
+                {
+                    <p>billtes de S/.100 : <b> @Model.cantBilletes[i]     </b></p>
+                    <p>billtes de S/.50  : <b> @Model.cantBilletes[i + 1] </b></p>
+                    <p>billtes de S/.20  : <b> @Model.cantBilletes[i + 2] </b></p>
+                    <p>billtes de S/.10  : <b> @Model.cantBilletes[i + 3] </b></p>
+                }
+            </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
