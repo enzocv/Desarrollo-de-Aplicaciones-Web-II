@@ -99,6 +99,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Ejercicio10Controller.cs" />
     <Compile Include="Controllers\Ejercicio2Controller.cs" />
+    <Compile Include="Controllers\Ejercicio3Controller.cs" />
+    <Compile Include="Controllers\Ejercicio4Controller.cs" />
     <Compile Include="Controllers\Ejercicio5Controller.cs" />
     <Compile Include="Controllers\Ejercicio6Controller.cs" />
     <Compile Include="Controllers\Ejercicio7Controller.cs" />
@@ -108,10 +110,13 @@
     </Compile>
     <Compile Include="Models\ClsEjercicio10.cs" />
     <Compile Include="Models\ClsEjercicio2.cs" />
+    <Compile Include="Models\ClsEjercicio3.cs" />
+    <Compile Include="Models\ClsEjercicio4.cs" />
     <Compile Include="Models\ClsEjercicio5.cs" />
     <Compile Include="Models\ClsEjercicio6.cs" />
     <Compile Include="Models\ClsEjercicio7.cs" />
     <Compile Include="Models\ClsEjercicio9.cs" />
+    <Compile Include="Models\MultiButtonAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +134,8 @@
     <Content Include="Views\Ejercicio9\CalcularBilletes.cshtml" />
     <Content Include="Views\Ejercicio10\Dibujar.cshtml" />
     <Content Include="Views\Ejercicio2\CalcularNumeros.cshtml" />
+    <Content Include="Views\Ejercicio3\CalcPosiciones.cshtml" />
+    <Content Include="Views\Ejercicio4\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

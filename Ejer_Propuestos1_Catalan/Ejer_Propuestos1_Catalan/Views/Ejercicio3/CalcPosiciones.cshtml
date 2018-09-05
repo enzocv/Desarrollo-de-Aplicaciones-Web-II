@@ -1,0 +1,36 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio3
+@{
+    //Layout = null;
+}
+
+@using (Html.BeginForm("CalcPosiciones", "Ejercicio3", FormMethod.Post, new { criterio = "frm-buscar" }))
+{
+    <div class="">
+        @Html.Label("Ingresar Números: ", new { @class = "h3" })
+        @for (int i = 0; i < 10; i++)
+        {
+            @Html.TextBoxFor(model => model.numeros[i], new { @class = "form-control input-lg", placeholder = "Posición " + (i) })
+            @Html.ValidationMessageFor(x => x.numeros[i], null, new { @class = "label label-danger" })
+        }
+        <br />
+
+        <div class="form-group">
+            <label><input type="radio" name="LMDes" value="false">Posiciones Impares</label>
+        </div>
+        <div class="form-group">
+            <label><input type="radio" name="LMDes" value="true">Posiciones Pares</label>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">CALCULAR</button>
+    </div>
+    <br />
+    <hr />
+    <br />
+}
+@if (Model.numeros != null && Model.validar == null)
+{
+    @Html.Label("La media es : ", new { @class = "h4" })
+
+    @Html.TextBoxFor(m => ViewData["Result"], new { @class = "form-control input-lg" })
+}
+
+

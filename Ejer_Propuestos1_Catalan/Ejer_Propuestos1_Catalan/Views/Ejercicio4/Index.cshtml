@@ -1,0 +1,117 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio4
+@{
+    //Layout = null;
+    int id = 0;
+    double min = 0, max = 0, suma = 0;
+    double auxprom = 0;
+    string promedio = "";
+}
+
+<div>
+    @using (Html.BeginForm("Index", "Ejercicio4", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.Label("Cantidad de Números", new { @class = "h4" })
+
+            @Html.TextBoxFor(model => model.cantidadNums, new { @class = "form-control input-md" })
+            @Html.ValidationMessageFor(x => x.cantidadNums, null, new { @class = "label label-danger" })
+
+        </div>
+
+        <div class="btn-group">
+            <input type="submit" name="action:Generar" value="GENERAR" class="btn btn-lg btn-primary" />
+        </div>
+        <div class="btn-group">
+            <input type="button" onclick="window.close();" value="SALIR" class="btn btn-lg btn-primary" />
+        </div>
+        <div class="btn-group">
+            <input type="submit" name="action:Grabar" value="GRABAR" class="btn btn-lg btn-primary" />
+        </div>
+        <div class="btn-group">
+            <input type="button" onclick="myClear()" value="LIMPIAR" class="btn btn-lg btn-primary" />
+        </div>
+        <div class="btn-group">
+            <input type="submit" name="action:Leer" value="LEER" class="btn btn-lg btn-primary" />
+        </div>
+
+        <br />
+        <br />
+
+        <div class="form-group">
+            @if (Model.numeros != null)
+            {
+                <table class="table table-bordered table-striped" id="tabla-ejercicio02">
+                    <tr>
+                        <th>ID</th>
+                        <th>Números</th>
+                    </tr>
+                    @for (int i = 0; i < Model.numeros.Length; i++)
+                    {
+                        id++;
+                        <tr>
+                            <td>
+                                @id
+                            </td>
+                            <td>
+                                @Model.numeros[i]
+                            </td>
+                        </tr>
+                    }
+                </table>
+                if (Model.cantidadNums > 0)
+                {
+                    min = Model.numeros.Min();
+                    max = Model.numeros.Max();
+                    suma = Model.numeros.Sum();
+                    auxprom = Model.numeros.Average();
+                    promedio = Convert.ToString(auxprom);
+                    promedio = promedio.Replace(',', '.');
+                }
+            }
+        </div>
+        <br />
+        <div class="form-group">
+            <label><input type="radio" id="1" onclick="myMin()" name="gender" value="Menor" />Menor</label>
+        </div>
+        <div class="form-group">
+            <label><input type="radio" id="2" onclick="myMax()" name="gender" value="Mayor" />Mayor</label>
+        </div>
+        <div class="form-group">
+            <label><input type="radio" id="3" onclick="mySum()" name="gender" value="Suma" />Suma</label>
+        </div>
+        <div class="form-group">
+            <label><input type="radio" id="4" onclick="myProm()" name="gender" value="Promedio" />Promedio</label>
+        </div>
+        <br />
+        <div class="form-group">
+            @if (Model.Tipo != null)
+            {
+                <label class="h4">El valor es: </label><input type="text" value="" class="form-control input-lg-1" />
+            }
+            else
+            {
+                <label class="h4">El valor es: </label><input type="text" id="result" value="" class="form-control input-lg-1" />
+            }
+        </div>
+    }
+</div>
+<script type="text/javascript">
+            function myClear() {
+                document.getElementById("cantidad").value = "";
+                document.getElementById("result").value = "";
+                var tb = document.getElementById("tabla-ejercicio02");
+                tb.remove();
+            }
+            function myMin() {
+                document.getElementById("result").value = @min;
+            }
+            function myMax() {
+                document.getElementById("result").value = @max;
+            }
+            function mySum() {
+                document.getElementById("result").value = @suma;
+            }
+            function myProm() {
+                document.getElementById("result").value = @promedio;
+            }
+</script>
