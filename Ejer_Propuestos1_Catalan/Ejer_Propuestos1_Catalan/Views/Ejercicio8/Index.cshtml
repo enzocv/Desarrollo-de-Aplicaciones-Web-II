@@ -1,0 +1,18 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio8
+@{
+    //Layout = null;
+}
+
+@using (Html.BeginForm("IngresarDatos", "Ejercicio8", FormMethod.Post, new { criterio = "frm-buscar" }))
+{
+    <div class="">
+        @Html.Label("Ingresar Números: ", new { @class = "h4" })
+
+        @Html.TextBoxFor(model => model.numeros, new { @class = "form-control input-lg", placeholder = "Ingresar número" })
+
+        <br />
+        <button type="submit" class="btn btn-lg btn-primary">CALCULAR</button>
+    </div>
+}
+<br />
+@Html.TextAreaFor(m => m.ListNumeros, new { rows = "10", cols = "10" })

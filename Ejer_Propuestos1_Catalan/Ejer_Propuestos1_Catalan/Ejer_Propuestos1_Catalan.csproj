@@ -104,6 +104,7 @@
     <Compile Include="Controllers\Ejercicio5Controller.cs" />
     <Compile Include="Controllers\Ejercicio6Controller.cs" />
     <Compile Include="Controllers\Ejercicio7Controller.cs" />
+    <Compile Include="Controllers\Ejercicio8Controller.cs" />
     <Compile Include="Controllers\Ejercicio9Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -115,6 +116,7 @@
     <Compile Include="Models\ClsEjercicio5.cs" />
     <Compile Include="Models\ClsEjercicio6.cs" />
     <Compile Include="Models\ClsEjercicio7.cs" />
+    <Compile Include="Models\ClsEjercicio8.cs" />
     <Compile Include="Models\ClsEjercicio9.cs" />
     <Compile Include="Models\MultiButtonAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +138,8 @@
     <Content Include="Views\Ejercicio2\CalcularNumeros.cshtml" />
     <Content Include="Views\Ejercicio3\CalcPosiciones.cshtml" />
     <Content Include="Views\Ejercicio4\Index.cshtml" />
+    <Content Include="Views\Ejercicio8\Index.cshtml" />
+    <Content Include="Views\Ejercicio8\IngresarDatos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

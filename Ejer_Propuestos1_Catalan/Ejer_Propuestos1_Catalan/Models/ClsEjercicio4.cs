@@ -11,7 +11,7 @@ namespace Ejer_Propuestos1_Catalan.Models
         public int[] numeros { get; set; }
         public int[] ArregloID { get; set; }
         [Required]
-        [Range(1, 100)] //int.MaxValue (valor maximo posible)
+        [Range(1, 1000)] //int.MaxValue (valor maximo posible)
         public int cantidadNums { get; set; }
         public double Respuesta { get; set; }
         public string Tipo { get; set; }

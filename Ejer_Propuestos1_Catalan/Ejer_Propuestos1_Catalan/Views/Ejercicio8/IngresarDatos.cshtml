@@ -1,0 +1,33 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio8
+@{
+    //Layout = null;
+}
+
+@using (Html.BeginForm("IngresarDatos", "Ejercicio8", FormMethod.Post, new { criterio = "frm-buscar" }))
+{
+    <div>
+        @Html.Label("Ingresar Números: ", new { @class = "h4" })
+
+        @Html.TextBoxFor(model => model.numeros, new { @class = "form-control input-lg", placeholder = "Ingresar número" })
+        @Html.ValidationMessageFor(model => model.numeros, null, new { @class = "label label-danger" })
+    </div>
+
+    <div class="text-right">
+        <button type="submit" class="btn btn-lg btn-primary">CALCULAR</button>
+    </div>
+}
+@if (Model.ListNumeros != null)
+{
+    <p>
+        @foreach (int item in Model.ListNumeros as List<int>)
+        {
+            <li>@item</li>
+        }
+    </p>
+}
+    <div class="container">
+        <p><b>Valor Maxímo:</b> @Model.ListNumeros.Max() </p>
+        <p><b>Valor Mínimo:</b> @Model.ListNumeros.Min() </p>
+        <p><b>Suma de los valores:</b> @Model.ListNumeros.Sum() </p>
+        <p><b>Promedio de los valores:</b> @Model.ListNumeros.Average() </p>
+    </div>
