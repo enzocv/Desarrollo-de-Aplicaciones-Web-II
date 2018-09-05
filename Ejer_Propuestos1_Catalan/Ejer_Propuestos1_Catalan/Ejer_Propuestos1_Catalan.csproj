@@ -94,6 +94,7 @@
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\bootstrap4-hello-world.min.css" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\js\Bomba.js" />
     <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\jquery-3.1.1.min.js" />
@@ -105,6 +106,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Ejercicio10Controller.cs" />
     <Compile Include="Controllers\Ejercicio11Controller.cs" />
+    <Compile Include="Controllers\Ejercicio12Controller.cs" />
     <Compile Include="Controllers\Ejercicio2Controller.cs" />
     <Compile Include="Controllers\Ejercicio3Controller.cs" />
     <Compile Include="Controllers\Ejercicio4Controller.cs" />
@@ -149,6 +151,7 @@
     <Content Include="Views\Ejercicio8\Index.cshtml" />
     <Content Include="Views\Ejercicio8\IngresarDatos.cshtml" />
     <Content Include="Views\Ejercicio11\CalcularUllman.cshtml" />
+    <Content Include="Views\Ejercicio12\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
