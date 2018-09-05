@@ -88,10 +88,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap-theme.css" />
     <Content Include="Assets\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\css\bootstrap.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\bootstrap4-hello-world.min.css" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\jquery-3.1.1.min.js" />
+    <Content Include="Assets\js\npm.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>

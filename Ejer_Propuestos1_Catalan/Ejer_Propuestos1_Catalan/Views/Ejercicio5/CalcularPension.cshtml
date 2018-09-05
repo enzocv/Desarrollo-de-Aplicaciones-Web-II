@@ -1,47 +1,40 @@
 ﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio5
 @{
-//Layout = null;
+    //Layout = null;
+    ViewBag.Title = "Pension";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CalcularPension</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Ejercicio 1</h1>
+<div class="panel panel-default">
+    <div class=" panel-heading">
+        <h2>Calcular pensión</h2>
     </div>
+    <div class="panel-body">
+        <div class="container">
+            @using (@Html.BeginForm("CalcularPension", "Ejercicio5", FormMethod.Post, new { criterio = "frm-buscar" }))
+            {
+                <div class="container">
+                    <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos1") 2 Hijos</label>
+                    <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos2") 3 a 5 Hijos</label>
+                    <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos3") 6 a más Hijos</label>
 
-    <div class="container">
-        @using (@Html.BeginForm("CalcularPension", "Ejercicio5", FormMethod.Post))
-        {
-            <div class="container">
-                <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos1") 2 Hijos</label>
-                <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos2") 3 a 5 Hijos</label>
-                <label>@Html.RadioButtonFor(model => model.numHijos1, "Hijos3") 6 a más Hijos</label>
+                    <br /><br />
+
+                    <h4>Cantidad de Hijos en edad escolar (6 a 18 años)</h4><br />
+                    @Html.TextBoxFor(model => model.cantHijosEscu, new { @class = "form-control input-lg" })
+
+                    <br /><br />
+
+                    <label>@Html.RadioButtonFor(model => model.viuda, "Viuda") Viuda</label>
+                </div>
 
                 <br /><br />
 
-                <label>Cantidad de Hijos en edad escolar (6 a 18 años)</label><br />
-                @Html.EditorFor(model => model.cantHijosEscu)
+                <div>
+                    <h4>Pensión: S/. @Model.pension</h4>
+                </div>
 
-                <br /><br />
-
-                <label>@Html.RadioButtonFor(model => model.viuda, "Viuda") Viuda</label>
-            </div>
-
-            <br /><br />
-
-            <div>
-                <p>Pensión: S/. @Model.pension</p>
-            </div>
-
-            <button>Calcular</button>
-        }
+                <button class="btn btn-lg btn-primary">Calcular</button>
+            }
+        </div>
     </div>
-
-</body>
-</html>
+</div>

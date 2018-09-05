@@ -3,14 +3,6 @@
 //Layout = null;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CalcularBilletes</title>
-</head>
-<body>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2>Cajero</h2>
@@ -18,25 +10,26 @@
         <div class="panel-body">
             @using (Html.BeginForm("CalcularBilletes", "Ejercicio9", FormMethod.Post))
             {
-                @Html.Label("Ingresar el Monto a retirar"); <br />
-                @Html.EditorFor(model => model.monto);
+                @Html.Label("Ingresar el Monto a retirar", new { @class = "h4"}); <br />
+                @Html.TextBoxFor(model => model.monto, new { @class = "form-control input-lg" });
 
             <div>
-                <button>Resultado</button>
-                <button onclick="window.close();">Salir</button>
+                <br />
+                <button class="btn btn-lg btn-primary">Resultado</button>
+                <button class="btn btn-lg btn-danger" onclick="window.close();">Salir</button>
+                
             </div>
 
             <div>
                 @for (int i = 0; i < 1; i++)
                 {
-                    <p>billtes de S/.100 : <b> @Model.cantBilletes[i]     </b></p>
-                    <p>billtes de S/.50  : <b> @Model.cantBilletes[i + 1] </b></p>
-                    <p>billtes de S/.20  : <b> @Model.cantBilletes[i + 2] </b></p>
-                    <p>billtes de S/.10  : <b> @Model.cantBilletes[i + 3] </b></p>
+                    <h4>billtes de S/.100 : <b> @Model.cantBilletes[i]     </b></h4>
+                    <h4>billtes de S/.50  : <b> @Model.cantBilletes[i + 1] </b></h4>
+                    <h4>billtes de S/.20  : <b> @Model.cantBilletes[i + 2] </b></h4>
+                    <h4>billtes de S/.10  : <b> @Model.cantBilletes[i + 3] </b></h4>
                 }
             </div>
             }
         </div>
     </div>
-</body>
-</html>
+

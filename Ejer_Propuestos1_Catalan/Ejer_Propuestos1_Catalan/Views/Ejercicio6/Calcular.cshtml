@@ -3,42 +3,34 @@
     //Layout = null;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Calcular</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Ejercicio 6</h1>
+<div class="panel panel-default">
+    <div class=" panel-heading">
+        <h2>Renta auto</h2>
     </div>
+    <div class="panel-body">
+        <div class="container">
+            @using (Html.BeginForm("Calcular", "Ejercicio6", FormMethod.Post, new { criterio = "frm-buscar" }))
+            {
+                <label>@Html.RadioButtonFor(model => model.coche, "chico")  chico</label>
+                <label>@Html.RadioButtonFor(model => model.coche, "mediano")  mediano</label>
+                <label>@Html.RadioButtonFor(model => model.coche, "grande")  grande</label>
 
-    <div class="container">
-        @using (Html.BeginForm("Calcular", "Ejercicio6", FormMethod.Post))
-        {
-            <label>@Html.RadioButtonFor(model => model.coche, "chico")  chico</label>
-            <label>@Html.RadioButtonFor(model => model.coche, "mediano")  mediano</label>
-            <label>@Html.RadioButtonFor(model => model.coche, "grande")  grande</label>
+                <br /><br />
+                <h5>Dias alquilados</h5>
+                @Html.TextBoxFor(model => model.dias, new { @class = "form-control input-lg" })
 
-            <br /><br />
-            <label>Dias alquilados</label>
-            @Html.EditorFor(model => model.dias)
+                <br /><br />
+                <h5>Cantidad de KM</h5>
+                @Html.TextBoxFor(model => model.km, new { @class = "form-control input-lg" })
 
-            <br /><br />
-            <label>Cantidad de KM</label>
-            @Html.EditorFor(model => model.km)
+                <div>
+                    <h4>Monto total a pagar: S/. @Model.total</h4>
+                </div>
 
-            <div class="container">
-                <label>Monto total a pagar: S/. @Model.total</label>
-            </div>
-
-            <button>Calcular</button>
-        }
+                <button class="btn btn-lg btn-primary">Calcular</button>
+            }
 
 
+        </div>
     </div>
-
-</body>
-</html>
+</div>
