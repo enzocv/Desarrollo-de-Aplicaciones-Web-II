@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Ejercicio10Controller.cs" />
+    <Compile Include="Controllers\Ejercicio11Controller.cs" />
     <Compile Include="Controllers\Ejercicio2Controller.cs" />
     <Compile Include="Controllers\Ejercicio3Controller.cs" />
     <Compile Include="Controllers\Ejercicio4Controller.cs" />
@@ -110,6 +111,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ClsEjercicio10.cs" />
+    <Compile Include="Models\ClsEjercicio11.cs" />
     <Compile Include="Models\ClsEjercicio2.cs" />
     <Compile Include="Models\ClsEjercicio3.cs" />
     <Compile Include="Models\ClsEjercicio4.cs" />
@@ -140,6 +142,7 @@
     <Content Include="Views\Ejercicio4\Index.cshtml" />
     <Content Include="Views\Ejercicio8\Index.cshtml" />
     <Content Include="Views\Ejercicio8\IngresarDatos.cshtml" />
+    <Content Include="Views\Ejercicio11\CalcularUllman.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,58 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio11
+@{
+    //Layout = null;
+    int Respt = 1;
+}
+
+@using (Html.BeginForm("CalcularUllman", "Ejercicio11", FormMethod.Post, new { criterio = "frm-buscar" }))
+{
+    <div class="form-group">
+        @Html.Label("Ingresar Número: ", new { @class = "h4" })
+
+        @Html.TextBoxFor(model => model.entero, new { @class = "form-control input-lg" })
+        @Html.ValidationMessageFor(x => x.entero, null, new { @class = "label label-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Ingresar el Símbolo: ", new { @class = "h4" })
+
+        @Html.TextBoxFor(model => model.simbolo, new { @class = "form-control input-lg" })
+        @Html.ValidationMessageFor(x => x.simbolo, null, new { @class = "label label-danger" })
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-lg btn-primary">CALCULAR</button>
+    </div>
+}
+<br />
+<table>
+    <tr>
+        <th></th>
+    </tr>
+    <tr>
+        @foreach (var item in ViewData["Ullman"] as List<int>)
+        {
+            //el ultimo valor sin signo de separacion
+            if (Respt == ViewBag.CountU)
+            {
+                <td> @item</td>
+            }
+            else
+            {
+                <td>@item - </td>
+            }
+            Respt++;
+        }
+    </tr>
+</table>
+<br />
+<table>
+    <tr>
+        <th></th>
+    </tr>
+    <tr>
+        @foreach (var item in ViewData["Usimbolo"] as List<string>)
+        {
+            <p> @item </p>
+        }
+    </tr>
+</table>
