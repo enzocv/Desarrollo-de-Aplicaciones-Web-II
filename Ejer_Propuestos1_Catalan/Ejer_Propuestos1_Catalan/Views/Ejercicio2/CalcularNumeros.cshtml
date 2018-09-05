@@ -1,0 +1,45 @@
+﻿@model Ejer_Propuestos1_Catalan.Models.ClsEjercicio2
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+@using (Html.BeginForm("CalcularNumeros", "Ejercicio2", FormMethod.Post, new { criterio = "frm-buscar" }))
+{
+    <div>
+        @Html.Label("Ingresar Números: ", new { @class = "h3" })
+        @for (int i = 0; i < 10; i++)
+        {
+            @Html.TextBoxFor(model => model.numeros[i], new { @class = "form-control input-lg", placeholder = "Número " + (i + 1) })
+            @Html.ValidationMessageFor(x => x.numeros[i], null, new { @class = "label label-danger" })
+        }
+        <br />
+        <button type="submit" class="btn btn-lg btn-primary">CALCULAR</button>
+    </div>
+    <br />
+    <hr />
+    <div>
+        @if (Model.numeros != null && Model.validar == null)
+        {
+            <div class="container-fluid">
+                <row>
+                    <div class="col-lg-6">
+                        <label class="h4">Lista de numeros negativos:</label>
+                        @foreach (var item in ViewData["numNegativos"] as List<int>)
+                        {
+                            <li>@item</li>
+                        }
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="h4">Lista de numeros positivos:</label>
+                        @foreach (var item in ViewData["numPositivos"] as List<int>)
+                        {
+                            <li>@item</li>
+                        }
+                    </div>
+                </row>
+            </div>
+        }
+    </div>
+}>
