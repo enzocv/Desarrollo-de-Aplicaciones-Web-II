@@ -49,41 +49,5 @@ namespace Laboratorio5_LINQ_Catalan.Controllers
 
             return View(objAlumnoNota);
         }
-
-        public ActionResult AlumnoTabla(ClsAlumnoNota objAlumnoNota)
-        {
-            string busqueda;
-
-            if (objAlumnoNota.busqueda != null)
-            {
-                busqueda = objAlumnoNota.busqueda;
-
-                var query = (from a in alumnos.Select((alumno, index) => new { alumno, index })
-                             join n in notas.Select((nota, index) => new { nota, index })
-                             on a.index equals n.index
-                             where a.alumno.Contains(busqueda)
-                             select new { a.alumno, n.nota }).ToList();
-                foreach (var item in query)
-                {
-                    objAlumnoNota.resultado += Convert.ToString(item) + "\n";
-                }
-            }
-            else
-            {
-                var query = (from a in alumnos.Select((alumno, index) => new { alumno, index })
-                             join n in notas.Select((nota, index) => new { nota, index })
-                             on a.index equals n.index
-                             select new { a.alumno, n.nota }).ToList();
-
-                foreach (var item in query)
-                {
-                    objAlumnoNota.resultado += Convert.ToString(item) + "\n";
-
-                }
-            }
-
-            return View(objAlumnoNota);
-        }
-
     }
 }

@@ -10,7 +10,8 @@ namespace Laboratorio5_LINQ_Catalan.Models
         public string busqueda { get; set; } = "";
         public string resultado { get; set; } = "";
 
-        public string nombreA { get; set; }
-        public double notaA { get; set; }
+        public List<string> nombreA { get; set; }
+        public List<double> notaA { get; set; }
+        public int filas { get; set; }
     }
 }
