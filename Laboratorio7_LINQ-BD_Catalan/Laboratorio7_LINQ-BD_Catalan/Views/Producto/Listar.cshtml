@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Laboratorio7_LINQ_BD_Catalan.Models.PRODUCTO>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar</title>
+</head>
+<body>
+    <div> 
+        <h1>Lista de Productos</h1>
+        <br />
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID Produc.</th>
+                    <th>Categoria</th>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@(p.IDPRODUCTO)</td>
+                    <td>@(p.CATEGORIA.NOMBRE)</td>
+                    <td>@(p.NOMBRE)</td>
+                    <td>@(p.DESCRIPCION)</td>
+                    <td>@(p.PRECIO)</td>
+                    <td>@(p.STOCK)</td>
+                    <td>@(p.ESTADO)</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
