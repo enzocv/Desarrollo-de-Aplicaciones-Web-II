@@ -1,0 +1,51 @@
+﻿@using Laboratorio6_LINQ_XML_Catalan.Models
+@model IEnumerable<Laboratorio6_LINQ_XML_Catalan.Models.ClsCursos>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ObtenerCodigo2</title>
+</head>
+<body>
+    <div>
+        <h1>Obtener 2 Cursos con XML</h1>
+        <br />
+        @using (Html.BeginForm("ObtenerCodigo2", "Cursos", FormMethod.Post))
+        {
+            @Html.Label("Ingrese Codigo:")
+            <br>
+            @*<input type="text" name="codigo" />*@
+            @Html.TextBox("codigo");
+            @*@Html.TextBoxFor(model => "",new { value = "codigo" })*@
+        
+            <br />
+            <input type="submit" value="Buscar" />
+        }
+        <br />
+        <table border="1">
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Horas</th>
+                <th>Creditos</th>
+                <th>Pre-Requisitos</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.codigo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.horas)</td>
+                    <td>@Html.DisplayFor(modelItem => item.creditos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.prerequisito)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

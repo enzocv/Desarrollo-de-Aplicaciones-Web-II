@@ -1,0 +1,39 @@
+﻿@using Laboratorio6_LINQ_XML_Catalan.Models
+@model IEnumerable<Laboratorio6_LINQ_XML_Catalan.Models.ClsCursos>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Listar Cursos con XML</h1>
+        <br />
+        <table border="1">
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Horas</th>
+                <th>Creditos</th>
+                <th>Pre-Requisitos</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.codigo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.horas)</td>
+                    <td>@Html.DisplayFor(modelItem => item.creditos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.prerequisito)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
