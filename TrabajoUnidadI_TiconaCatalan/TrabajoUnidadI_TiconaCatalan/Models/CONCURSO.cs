@@ -4,6 +4,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Linq;
 
@@ -45,67 +46,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
 
             return proyectos;
         }
-
-        //categoria A
-        public List<CONCURSO> GetCategoriaA()
-        {
-            var proyectos = new List<CONCURSO>();
-            try
-            {
-                using (var db = new ModeloConcurso())
-                {
-                    proyectos = db.CONCURSO.Include("CURSO")
-                        .Where(x => x.CURSO.CICLO <= 4).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-
-            return proyectos;
-        }
-
-        //categoria B
-        public List<CONCURSO> GetCategoriaB()
-        {
-            var proyectos = new List<CONCURSO>();
-            try
-            {
-                using (var db = new ModeloConcurso())
-                {
-                    proyectos = db.CONCURSO.Include("CURSO")
-                        .Where(x => x.CURSO.CICLO <= 7 && x.CURSO.CICLO >= 5).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-
-            return proyectos;
-        }
-
-        //categoria C
-        public List<CONCURSO> GetCategoriaC()
-        {
-            var proyectos = new List<CONCURSO>();
-            try
-            {
-                using (var db = new ModeloConcurso())
-                {
-                    proyectos = db.CONCURSO.Include("CURSO")
-                        .Where(x => x.CURSO.CICLO <= 8 && x.CURSO.CICLO >= 10).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-
-            return proyectos;
-        }
-
+        
         #endregion
     }
 }
