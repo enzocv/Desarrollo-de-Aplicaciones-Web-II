@@ -1,31 +1,58 @@
-﻿@{
+﻿@model IEnumerable<TrabajoUnidadI_TiconaCatalan.Models.CONCURSO>
+@{
     ViewBag.Title = "Home Page";
+    var cont = 1;
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Concurso de Proyectos - UPT</h1>
+    <p class="lead">Participa en el concurso de proyectos de la Universidad Privada de Tacna</p>
+    <p><a href="#" class="btn btn-primary btn-lg">Incribete &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="">
+        <h2>Proyectos Inscritos</h2>
+        <div class="clearfix"></div>
+        <h4>Categoria A</h4>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Proyecto</th>
+                        <th>Curso</th>
+                        <th>Integrantes</th>
+                        <th>Asesor</th>
+                        <th>Categoria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@cont</td>
+                        <td>@item.TEMA</td>
+                        <td>@item.CURSO.NOMBRE</td>
+                        <td>@item.INTEGRANTES</td>
+                        <td>@item.CURSO.NOMBREDOCENTE</td>
+                        @if (@item.CURSO.CICLO <= 4)
+                        {
+                            <td>A</td>
+                        }
+                        else if (@item.CURSO.CICLO <= 7 && item.CURSO.CICLO>=5)
+                        {
+                            <td>B</td>
+                        }
+                        else if (@item.CURSO.CICLO <= 10 && item.CURSO.CICLO >= 8)
+                        {
+                            <td>C</td>
+                        }
+                    </tr>
+                        cont++;
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

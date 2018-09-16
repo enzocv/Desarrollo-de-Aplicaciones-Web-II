@@ -159,7 +159,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelConcurso.cs" />
+    <Compile Include="Models\CONCURSO.cs" />
+    <Compile Include="Models\CURSO.cs" />
+    <Compile Include="Models\ModeloConcurso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

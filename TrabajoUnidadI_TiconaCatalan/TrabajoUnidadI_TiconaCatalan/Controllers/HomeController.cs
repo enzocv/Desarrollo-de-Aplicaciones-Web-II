@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TrabajoUnidadI_TiconaCatalan.Models;
 
 namespace TrabajoUnidadI_TiconaCatalan.Controllers
 {
     public class HomeController : Controller
     {
+        private CONCURSO objConcurso = new CONCURSO();
+
         public ActionResult Index()
         {
-            return View();
+            return View(objConcurso.GetProyectos());
         }
 
         public ActionResult About()

@@ -18,18 +18,17 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
         [Key]
         public int IDCURSO { get; set; }
 
-        public int IDDOCENTE { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string NOMBREDOCENTE { get; set; }
 
         [Required]
         [StringLength(50)]
         public string NOMBRE { get; set; }
 
-        [StringLength(5)]
-        public string CICLO { get; set; }
+        public int? CICLO { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONCURSO> CONCURSO { get; set; }
-
-        public virtual DOCENTE DOCENTE { get; set; }
     }
 }

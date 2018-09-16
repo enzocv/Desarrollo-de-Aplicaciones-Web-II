@@ -5,16 +5,15 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class ModelConcurso : DbContext
+    public partial class ModeloConcurso : DbContext
     {
-        public ModelConcurso()
-            : base("name=ModelConcurso")
+        public ModeloConcurso()
+            : base("name=ModeloConcurso")
         {
         }
 
         public virtual DbSet<CONCURSO> CONCURSO { get; set; }
         public virtual DbSet<CURSO> CURSO { get; set; }
-        public virtual DbSet<DOCENTE> DOCENTE { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,25 +26,16 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<CURSO>()
-                .Property(e => e.NOMBRE)
+                .Property(e => e.NOMBREDOCENTE)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CURSO>()
-                .Property(e => e.CICLO)
+                .Property(e => e.NOMBRE)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CURSO>()
                 .HasMany(e => e.CONCURSO)
                 .WithRequired(e => e.CURSO)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<DOCENTE>()
-                .Property(e => e.NOMBRE)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DOCENTE>()
-                .HasMany(e => e.CURSO)
-                .WithRequired(e => e.DOCENTE)
                 .WillCascadeOnDelete(false);
         }
     }
