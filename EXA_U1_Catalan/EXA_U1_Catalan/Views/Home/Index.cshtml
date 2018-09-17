@@ -1,0 +1,34 @@
+﻿@using EXA_U1_Catalan.Models
+@model IEnumerable<EXA_U1_Catalan.Models.ClsCarga>
+@{
+    ViewBag.Title = "Home Page";
+    int cont = 1;
+}
+
+<div class="jumbotron">
+    <h1>XML</h1>
+    <p class="lead">Trabajar con dos archivos XML con LINQ</p>
+</div>
+
+<div class="row">
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Nombre Docente</th>
+            <th>Nombre Curso</th>
+            <th>Horas Curso</th>
+            <th>Creditos Curso</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@cont</td>
+            <td>@Html.DisplayFor(modelItem => item.nomDocen)</td>
+            <td>@Html.DisplayFor(modelItem => item.nomCurso)</td>
+            <td>@Html.DisplayFor(modelItem => item.horas)</td>
+            <td>@Html.DisplayFor(modelItem => item.creditos)</td>
+        </tr>
+            cont++;
+        }
+    </table>
+</div>

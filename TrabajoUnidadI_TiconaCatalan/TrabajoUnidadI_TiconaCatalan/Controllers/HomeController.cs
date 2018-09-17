@@ -10,10 +10,12 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
     public class HomeController : Controller
     {
         private CONCURSO objConcurso = new CONCURSO();
+        private CATEGORIAS objCategoria = new CATEGORIAS();
 
         public ActionResult Index()
         {
-            return View(objConcurso.GetProyectos());
+            //return View(objConcurso.GetProyectos());
+            return View();
         }
 
         public ActionResult About()
@@ -23,11 +25,31 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult ListarCategorias()
         {
-            ViewBag.Message = "Your contact page.";
+            return View(objCategoria.Listar());
+        }
 
-            return View();
+        public ActionResult AgregarCategoria(string valor = "")
+        {
+            ViewBag.Message = "Agregar Categoria";
+
+            if (valor.Equals(""))
+            {
+                return View();
+            }
+            else
+            {
+                objCategoria.NOMBRECATEGORIA = valor;
+
+                using (var db = new ModeloCONCURSO())
+                {
+                    db.CATEGORIAS.Add(this.objCategoria);
+                    db.SaveChanges();
+                }
+
+                return RedirectToAction("ListarCategorias");
+            }
         }
     }
 }

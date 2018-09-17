@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docentes>
+  <docente>
+    <codigo>1</codigo>
+    <nombre>Luis</nombre>
+    <Apellido>Cardenas Paredes</Apellido>
+    <email>cardenas@gmail.com</email>
+  </docente>
+  <docente><codigo>2</codigo>
+    
+    <nombre>Pedro</nombre>
+    <Apellido>Condori Marcavillaca</Apellido>
+    <email>condori@gmail.com</email>
+  </docente>
+  <docente>
+    <codigo>3</codigo>
+    <nombre>Juan</nombre>
+    <Apellido>Ugaz Salaverry</Apellido>
+    <email>ugaz@gmail.com</email>
+  </docente>
+  <docente>
+    <codigo>4</codigo>
+    <nombre>Percy</nombre>
+    <Apellido>Chávarry Araujo</Apellido>
+    <email>chavarry@gmail.com</email>
+  </docente>
+  <docente>
+    <codigo>5</codigo>
+    <nombre>Ricardo</nombre>
+    <Apellido>Álvarez Castro</Apellido>
+    <email>alvarez@gmail.com</email>
+  </docente>
+  <docente>
+    <codigo>6</codigo>
+    <nombre>Ricardo</nombre>
+    <Apellido>Sánchez Bruce</Apellido>
+    <email>sanchez@gmail.com</email>
+  </docente>
+</docentes>

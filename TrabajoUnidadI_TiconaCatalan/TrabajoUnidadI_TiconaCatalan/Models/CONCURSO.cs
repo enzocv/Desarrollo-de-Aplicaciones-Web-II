@@ -4,49 +4,32 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity;
     using System.Data.Entity.Spatial;
-    using System.Linq;
 
     [Table("CONCURSO")]
     public partial class CONCURSO
     {
-        #region DatosClase
         [Key]
         public int IDCONCURSO { get; set; }
 
-        public int IDCURSO { get; set; }
+        public int IDCATEGORIA { get; set; }
 
+        [Required]
         [StringLength(80)]
         public string TEMA { get; set; }
 
         [Column(TypeName = "text")]
+        [Required]
         public string INTEGRANTES { get; set; }
 
-        public virtual CURSO CURSO { get; set; }
-        #endregion
+        [Required]
+        [StringLength(50)]
+        public string CURSO { get; set; }
 
-        #region Metodos
-        public List<CONCURSO> GetProyectos()
-        {
-            var proyectos = new List<CONCURSO>();
-            try
-            {
-                using (var db = new ModeloConcurso())
-                {
-                    proyectos = db.CONCURSO.Include("CURSO")
-                                .OrderBy(x => x.CURSO.CICLO)
-                                .ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+        [Required]
+        [StringLength(50)]
+        public string ASESOR { get; set; }
 
-            return proyectos;
-        }
-        
-        #endregion
+        public virtual CATEGORIAS CATEGORIAS { get; set; }
     }
 }
