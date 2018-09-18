@@ -1,0 +1,45 @@
+﻿@model List<TrabajoUnidadI_TiconaCatalan.Models.CONCURSO>
+@{
+    ViewBag.Title = "index";
+}
+
+<h2 class="page-header">
+    Concurso Proyectos
+</h2>
+<div class="text-right">
+    <a href="~/Concurso/AgregarEditar/"
+       class="btn btn-success pull-rigth">Nuevo Proyecto</a>
+</div>
+
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th >Id</th>
+            <th >Tema</th>
+            <th >Integrantes</th>
+            <th >Curso</th>
+            <th >Asesor</th>
+            <th >Categoria</th>
+            <th ></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+        <tr>
+            <th>@(m.IDCONCURSO)</th>
+            <th>@(m.TEMA)</th>
+            <th>@(m.INTEGRANTES)</th>
+            <th>@(m.CURSO)</th>
+            <th>@(m.ASESOR)</th>
+            <th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+            <th style="align-content:center">
+                <a href="~/Concurso/AgregarEditar/@m.IDCONCURSO" class="btn btn-xs btn-primary">Modificar</a>
+                <a href="~/Concurso/Eliminar/@m.IDCONCURSO" class="btn btn-xs btn-danger"
+                   onclick="return confirm('¿Esta Seguro que desea eliminar el registro?');">Eliminar</a>
+            </th>
+        </tr>
+        }
+    </tbody>
+</table>

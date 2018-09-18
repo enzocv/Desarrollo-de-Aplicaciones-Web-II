@@ -3,22 +3,14 @@
     ViewBag.Title = (Model.IDCATEGORIA > 0 ? Model.NOMBRECATEGORIA : "Nuevo registro");
 }
 
-<h2>AgregarEditar</h2>
+<h2>Agregar | Editar</h2>
 
-<ol class="breadcrumb">
-    <li><a href="~/Persona">Categoria</a></li>
-    @*<li class="active">@((Model.persona_id) > 0 ? Model.nombre : "Nuevo resgistro")</li>*@
-</ol>
 @using (Html.BeginForm("Guardar", "Sorteo", FormMethod.Post, new { @id = "frm-persona" }))
 {
     @Html.HiddenFor(x=>x.IDCATEGORIA)
     <div class="panel panel-default">
         <div class="panel-heading">Informacion de la Categoria</div>
         <div class="panel-body">
-            <div class="form-group">
-                @Html.Label("Id:")
-                @Html.TextBoxFor(x => x.IDCATEGORIA, new { @class = "form-control", disabled = true })
-            </div>
             <div class="form-group">
                 @Html.Label("Nombre Categoria:")
                 @Html.TextBoxFor(x => x.NOMBRECATEGORIA, new { @class = "form-control" })
@@ -28,6 +20,6 @@
     </div>
     <div class="text-right">
         <button type="submit" class="btn btn-primary">Grabar</button>
-        <a href="~/Categoria" class="btn btn-danger">Cancelar</a>
+        <a href="~/Sorteo" class="btn btn-danger">Cancelar</a>
     </div>
 }

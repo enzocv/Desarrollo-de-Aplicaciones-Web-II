@@ -33,5 +33,12 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
                 return View("~/Views/Sorteo/AgregarEditar.cshtml",ObjCategorias);
             }
         }
+
+        public ActionResult Eliminar(int id)
+        {
+            Categorias.IDCATEGORIA = id;
+            Categorias.Eliminar();
+            return Redirect("~/Sorteo");
+        }
     }
 }

@@ -1,0 +1,55 @@
+﻿@model TrabajoUnidadI_TiconaCatalan.Models.CONCURSO
+@{
+    ViewBag.Title = (Model.IDCONCURSO > 0 ? Model.TEMA : "Nuevo Proyecto");
+
+    List<TrabajoUnidadI_TiconaCatalan.Models.CATEGORIAS> categs;
+    categs = ViewBag.Categorias;
+}
+
+<h2>Agregar | Editar</h2>
+
+@using (Html.BeginForm("Guardar", "Concurso", FormMethod.Post, new { @id = "frm-concurso" }))
+{
+    @Html.HiddenFor(x => x.IDCONCURSO)
+    <div class="panel panel-default">
+        <div class="panel-heading">Informacion del Proyecto</div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.Label("Nombre Proyecto:")
+                @Html.TextBoxFor(x => x.TEMA, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.TEMA, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Integrantes:")
+                @Html.TextBoxFor(x => x.INTEGRANTES, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.INTEGRANTES, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Curso:")
+                @Html.TextBoxFor(x => x.CURSO, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CURSO, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Asesor:")
+                @Html.TextBoxFor(x => x.ASESOR, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ASESOR, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Categoria:")
+                <select name="IDCATEGORIA" class="form-control">
+                    <option @(Model.IDCATEGORIA.Equals("") ? "Selected" : "") value="">-Seleccione-</option>
+                    @foreach (var p in categs)
+                    {
+                        <option @(Model.IDCATEGORIA.Equals(p.IDCATEGORIA) ? "Selected" : "") value="@p.IDCATEGORIA">@p.NOMBRECATEGORIA</option>
+                        @Html.ValidationMessageFor(x => x.IDCATEGORIA, null, new { @class = "label label-danger" })
+                    }
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">Grabar</button>
+        <a href="~/Concurso" class="btn btn-danger">Cancelar</a>
+    </div>
+}

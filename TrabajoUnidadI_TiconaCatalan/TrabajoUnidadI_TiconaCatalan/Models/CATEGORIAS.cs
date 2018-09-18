@@ -69,29 +69,6 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             return cate;
         }
 
-		//public CATEGORIAS Editar(int id)
-		//{
-		//    var cate = new CATEGORIAS();
-
-		//    try
-		//    {
-		//        using (var context = new ModeloCONCURSO())
-		//        {
-		//            context.Database.ExecuteSqlCommand(
-		//                "UPDATE CATEGORIAS SET NOMBRECATEGORIA = @nombre WHERE IDCATEGORIA=@id",
-		//                //new SqlParameter("id", id),
-		//                //new SqlParameter("nombre",);
-		//        }
-		//    }
-		//    catch (Exception e)
-		//    {
-		//        throw new Exception(e.Message);
-		//    }
-
-
-		//    return cate;
-		//}
-
 		public void Guardar()
 		{
 			try
@@ -115,5 +92,21 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
 			}
 		}
 
-	}
+        public void Eliminar()
+        {
+            try
+            {
+                using (var db = new ModeloCONCURSO())
+                {
+                    db.Entry(this).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+    }
 }

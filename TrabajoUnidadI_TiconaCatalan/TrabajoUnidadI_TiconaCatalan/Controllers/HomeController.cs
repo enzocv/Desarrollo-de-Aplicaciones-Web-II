@@ -24,44 +24,5 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
 
             return View();
         }
-
-        public ActionResult ListarCategorias()
-        {
-            return View(objCategoria.Listar());
-        }
-
-        public ActionResult AgregarCategoria(string valor = "")
-        {
-            ViewBag.Message = "Agregar Categoria";
-
-            if (valor.Equals(""))
-            {
-                return View();
-            }
-            else
-            {
-                objCategoria.NOMBRECATEGORIA = valor;
-
-                using (var db = new ModeloCONCURSO())
-                {
-                    db.CATEGORIAS.Add(this.objCategoria);
-                    db.SaveChanges();
-                }
-
-                return RedirectToAction("ListarCategorias");
-            }
-        }
-        public ActionResult EditarCategoria(CATEGORIAS objCats, int id = 0)
-        {
-            objCategoria.Obtener(id);
-            if (objCategoria.IDCATEGORIA == 0)
-            {
-                return RedirectToAction("ListarCategorias");
-            }
-            else
-            {
-                return View();
-            }
-        }
     }
 }
