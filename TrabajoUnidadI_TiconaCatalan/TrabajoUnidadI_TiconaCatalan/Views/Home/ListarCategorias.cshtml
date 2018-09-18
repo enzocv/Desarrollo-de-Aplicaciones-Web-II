@@ -17,15 +17,17 @@
                     <tr>
                         <th>#</th>
                         <th>Categoria</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@cont</td>
-                            <td>@item.NOMBRECATEGORIA</td>
-                        </tr>
+                    <tr>
+                        <td>@cont</td>
+                        <td>@item.NOMBRECATEGORIA</td>
+                        <td><a href="~/Home/EditarCategoria/@cont">Editar</a></td>
+                    </tr>
                         cont++;
                     }
                 </tbody>

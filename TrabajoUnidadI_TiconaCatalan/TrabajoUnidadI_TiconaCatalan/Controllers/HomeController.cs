@@ -51,5 +51,17 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
                 return RedirectToAction("ListarCategorias");
             }
         }
+        public ActionResult EditarCategoria(CATEGORIAS objCats, int id = 0)
+        {
+            objCategoria.Obtener(id);
+            if (objCategoria.IDCATEGORIA == 0)
+            {
+                return RedirectToAction("ListarCategorias");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

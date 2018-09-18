@@ -1,0 +1,13 @@
+﻿@model TrabajoUnidadI_TiconaCatalan.Models.CATEGORIAS
+@{
+    ViewBag.Title = "EditarCategoria";
+}
+
+<h2>Editar Categoria</h2>
+@using (Html.BeginForm("EditarCategoria", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.IDCATEGORIA)
+    <input type="text" value=@Model.NOMBRECATEGORIA />
+
+    <input type="submit" value="Editar" />
+}

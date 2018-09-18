@@ -208,6 +208,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ListarCategorias.cshtml" />
     <Content Include="Views\Home\AgregarCategoria.cshtml" />
+    <Content Include="Views\Home\EditarCategoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
