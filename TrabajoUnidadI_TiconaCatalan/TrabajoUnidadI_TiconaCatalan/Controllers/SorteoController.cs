@@ -11,10 +11,9 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
     {
         private CATEGORIAS Categorias = new CATEGORIAS();
         // GET: Sorteo
-        public ActionResult Index()
+        public ActionResult Index(string criterio)
         {
-
-            return View();
+            return View(Categorias.Listar());
         }
         public ActionResult AgregarEditar(int id = 0)
         {
