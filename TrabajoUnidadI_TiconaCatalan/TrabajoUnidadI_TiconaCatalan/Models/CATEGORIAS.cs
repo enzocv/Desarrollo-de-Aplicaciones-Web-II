@@ -4,6 +4,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Data.SqlClient;
     using System.Linq;
@@ -68,28 +69,51 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             return cate;
         }
 
-        public CATEGORIAS Editar(int id)
-        {
-            var cate = new CATEGORIAS();
+		//public CATEGORIAS Editar(int id)
+		//{
+		//    var cate = new CATEGORIAS();
 
-            try
-            {
-                using (var context = new ModeloCONCURSO())
-                {
-                    context.Database.ExecuteSqlCommand(
-                        "UPDATE CATEGORIAS SET NOMBRECATEGORIA = @nombre WHERE IDCATEGORIA=@id",
-                        //new SqlParameter("id", id),
-                        //new SqlParameter("nombre",);
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
+		//    try
+		//    {
+		//        using (var context = new ModeloCONCURSO())
+		//        {
+		//            context.Database.ExecuteSqlCommand(
+		//                "UPDATE CATEGORIAS SET NOMBRECATEGORIA = @nombre WHERE IDCATEGORIA=@id",
+		//                //new SqlParameter("id", id),
+		//                //new SqlParameter("nombre",);
+		//        }
+		//    }
+		//    catch (Exception e)
+		//    {
+		//        throw new Exception(e.Message);
+		//    }
 
 
-            return cate;
-        }
+		//    return cate;
+		//}
 
-    }
+		public void Guardar()
+		{
+			try
+			{
+				using (var db = new ModeloCONCURSO())
+				{
+					if (this.IDCATEGORIA > 0)
+					{
+						db.Entry(this).State = EntityState.Modified;
+					}
+					else
+					{
+						db.Entry(this).State = EntityState.Added;
+					}
+					db.SaveChanges();
+				}
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+	}
 }
