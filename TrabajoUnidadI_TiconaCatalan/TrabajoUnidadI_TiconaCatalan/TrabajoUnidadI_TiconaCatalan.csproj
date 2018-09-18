@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Controllers\ConcursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SortearController.cs" />
     <Compile Include="Controllers\SorteoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -252,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Sortear\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
