@@ -159,12 +159,14 @@
     <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Controllers\ConcursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MruvController.cs" />
     <Compile Include="Controllers\SortearController.cs" />
     <Compile Include="Controllers\SorteoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CATEGORIAS.cs" />
+    <Compile Include="Models\ClsMruv.cs" />
     <Compile Include="Models\CONCURSO.cs" />
     <Compile Include="Models\ModeloCONCURSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,6 +178,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\misEstilos.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -204,6 +207,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\Concurrent.Thread.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -214,6 +218,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\mijs.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -250,10 +255,12 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Concurso\Index.cshtml" />
     <Content Include="Views\Concurso\AgregarEditar.cshtml" />
+    <Content Include="Views\Sortear\Index.cshtml" />
+    <Content Include="Views\Mruv\Index.cshtml" />
+    <Content Include="Views\Mruv\Calcular.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sortear\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
