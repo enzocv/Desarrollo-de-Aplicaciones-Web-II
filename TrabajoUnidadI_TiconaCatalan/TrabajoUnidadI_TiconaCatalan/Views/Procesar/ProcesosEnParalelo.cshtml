@@ -1,0 +1,58 @@
+﻿@model List<TrabajoUnidadI_TiconaCatalan.Models.Persona>
+@{
+	ViewBag.Title = "ProcesosEnParalelo";
+}
+
+<h2>ProcesosEnParalelo</h2>
+
+@using (Html.BeginForm("ProcesosEnParalelo", "Procesar", FormMethod.Post, new { criterio = "frm-buscar" }))
+{
+	<div class="text-left">
+		@Html.Label("Buscar: ")
+		@Html.TextBox("Criterio")
+		<div class="btn-group">
+			<input type="submit" name="action:Anormal" value="Buscar Anormal" class="btn btn-primary" />
+		</div>
+		<div class="btn-group">
+			<input type="submit" name="action:Normal" value="Buscar Normal" class="btn btn-primary" />
+		</div>
+		<div class="btn-group">
+			<input type="submit" name="action:ListarN" value="Listar Normal" class="btn btn-primary" />
+		</div>
+		<div class="btn-group">
+			<input type="submit" name="action:ListarA" value="Listar Anormal" class="btn btn-primary" />
+		</div>
+	</div>
+}
+<br />
+<label class="h4">@(ViewBag.DuracionL + " " + ViewBag.DuracionLL) </label>
+<label class="h4">@(ViewBag.DuracionB + " " + ViewBag.DuracionBB) </label>
+<br />
+@if (Model != null)
+{
+	<table class="table table-hover table-bordered" id="ejemplo2">
+		<thead>
+			<tr style="width: 130px">
+				<th style="width:50px">IdPersona</th>
+				<th style="width:100px">Nombre</th>
+				<th style="width:200px">Descripcion</th>
+				<th style="width:100px">Apodo</th>
+				<th style="width:100px">Direccion</th>
+				<th style="width:70px">Correo</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var m in Model)
+			{
+				<tr>
+					<th>@(m.IdPersona)</th>
+					<th>@(m.NombrePersona)</th>
+					<th>@(m.Descripcion)</th>
+					<th>@(m.Apodo)</th>
+					<th>@(m.Direccion)</th>
+					<th>@(m.Correo)</th>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
