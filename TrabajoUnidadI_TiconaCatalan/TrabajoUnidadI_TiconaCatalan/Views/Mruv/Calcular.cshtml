@@ -1,0 +1,31 @@
+﻿@model TrabajoUnidadI_TiconaCatalan.Models.ClsMruv
+@{
+    ViewBag.Title = "Calcular";
+}
+
+<h3>Resultado</h3>
+<div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+        <input type="text" id="velA" value="@Model.velocidadA" hidden />
+        <input type="text" id="velB" value="@Model.velocidadB" hidden />
+        <div>
+            <p>Velocidad de Moto A: <spam id="">@Model.velocidadA</spam> </p>
+            <p>Velocidad de Moto B: <spam id="">@Model.velocidadB</spam></p>
+            <p><spam>Distancia: @(Model.distancia)</spam></p>
+        </div>
+        <div>
+            <p><h4>Gano: @(Model.ganador)</h4></p>
+            <p><spam>Tiempo de @Model.ganador: @(Model.tiempoGanador) H</spam></p>
+            <p><spam>Tiempo la otra Moto: @(Model.tiempoPerdedor) H</spam></p>
+            <p><spam>Punto en el que se encontraba la moto que perdio cuando la otra termino: @(Model.distanciaPerdedor)  mts</spam></p>
+        </div>
+
+        <br /><br />
+
+        <div id="myContainer">
+            <div id="myAnimation"></div>
+            <div id="myAnimation2"></div>
+        </div>
+    </div>
+</div>

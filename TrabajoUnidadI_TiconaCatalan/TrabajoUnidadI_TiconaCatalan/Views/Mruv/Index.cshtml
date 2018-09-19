@@ -1,0 +1,26 @@
+﻿@model TrabajoUnidadI_TiconaCatalan.Models.ClsMruv
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Clase de MRUV</h2>
+@using (Html.BeginForm("Calcular", "Mruv", FormMethod.Post, new { @id = "frm-concurso" }))
+{
+    <div class="form-group">
+        @Html.Label("Velocidad de Moto A:")
+        @Html.TextBoxFor(x => x.velocidadA, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.velocidadA, null, new { @class = "label label-danger" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Velocidad de Moto B:")
+        @Html.TextBoxFor(x => x.velocidadB, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.velocidadB, null, new { @class = "label label-danger" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Distancia:")
+        @Html.TextBoxFor(x => x.distancia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.distancia, null, new { @class = "label label-danger" })
+    </div>
+    <input type="submit" value="Calcular" />
+}
+

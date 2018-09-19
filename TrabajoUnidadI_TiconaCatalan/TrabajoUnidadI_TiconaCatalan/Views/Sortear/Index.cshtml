@@ -1,0 +1,119 @@
+﻿@model List<TrabajoUnidadI_TiconaCatalan.Models.CONCURSO>
+@{
+    ViewBag.Title = "index";
+}
+
+<h2 class="page-header">
+    Sorteo de Proyectos
+</h2>
+
+<br><br />
+<h3>Categoria A</h3>
+@foreach (var m in Model)
+{
+    if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("A"))
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tema</th>
+                    <th>Integrantes</th>
+                    <th>Curso</th>
+                    <th>Asesor</th>
+                    <th>Categoria</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <th>@(m.IDCONCURSO)</th>
+                    <th>@(m.TEMA)</th>
+                    <th>@(m.INTEGRANTES)</th>
+                    <th>@(m.CURSO)</th>
+                    <th>@(m.ASESOR)</th>
+                    <th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+                    <th style="align-content:center">
+
+                    </th>
+                </tr>
+
+            </tbody>
+        </table>
+    }
+}
+<br /><br />
+
+<h3>Categoria B</h3>
+@foreach (var m in Model)
+{
+    if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("B"))
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tema</th>
+                    <th>Integrantes</th>
+                    <th>Curso</th>
+                    <th>Asesor</th>
+                    <th>Categoria</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <th>@(m.IDCONCURSO)</th>
+                    <th>@(m.TEMA)</th>
+                    <th>@(m.INTEGRANTES)</th>
+                    <th>@(m.CURSO)</th>
+                    <th>@(m.ASESOR)</th>
+                    <th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+                    <th style="align-content:center">
+
+                    </th>
+                </tr>
+
+            </tbody>
+        </table>
+    }
+}
+<br /><br />
+
+<h3>Categoria C</h3>
+@foreach (var m in Model)
+{
+    if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("C"))
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tema</th>
+                    <th>Integrantes</th>
+                    <th>Curso</th>
+                    <th>Asesor</th>
+                    <th>Categoria</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <th>@(m.IDCONCURSO)</th>
+                    <th>@(m.TEMA)</th>
+                    <th>@(m.INTEGRANTES)</th>
+                    <th>@(m.CURSO)</th>
+                    <th>@(m.ASESOR)</th>
+                    <th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+                    <th style="align-content:center">
+
+                    </th>
+                </tr>
+
+            </tbody>
+        </table>
+    }
+}
