@@ -124,7 +124,41 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             {
                 using (var db = new ModeloCONCURSO())
                 {
-                    proyecto = db.CONCURSO.Include("CATEGORIAS").ToList(); 
+                    proyecto = db.CONCURSO.Include("CATEGORIAS").Where(x=>x.CATEGORIAS.NOMBRECATEGORIA.Equals("A")).ToList(); 
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return proyecto;
+        }
+        public List<CONCURSO> ListarB()
+        {
+            var proyecto = new List<CONCURSO>();
+
+            try
+            {
+                using (var db = new ModeloCONCURSO())
+                {
+                    proyecto = db.CONCURSO.Include("CATEGORIAS").Where(x => x.CATEGORIAS.NOMBRECATEGORIA.Equals("B")).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return proyecto;
+        }
+        public List<CONCURSO> ListarC()
+        {
+            var proyecto = new List<CONCURSO>();
+
+            try
+            {
+                using (var db = new ModeloCONCURSO())
+                {
+                    proyecto = db.CONCURSO.Include("CATEGORIAS").Where(x => x.CATEGORIAS.NOMBRECATEGORIA.Equals("C")).ToList();
                 }
             }
             catch (Exception ex)

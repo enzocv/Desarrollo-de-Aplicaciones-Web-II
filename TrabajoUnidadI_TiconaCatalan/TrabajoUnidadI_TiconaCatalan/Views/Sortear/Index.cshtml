@@ -1,119 +1,130 @@
 ﻿@model List<TrabajoUnidadI_TiconaCatalan.Models.CONCURSO>
 @{
-    ViewBag.Title = "index";
+	ViewBag.Title = "index";
+	int count = 0, count1 = 0, count2 = 0;
 }
 
 <h2 class="page-header">
-    Sorteo de Proyectos
+	Sorteo de Proyectos
 </h2>
-
 <br><br />
-<h3>Categoria A</h3>
-@foreach (var m in Model)
-{
-    if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("A"))
-    {
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Tema</th>
-                    <th>Integrantes</th>
-                    <th>Curso</th>
-                    <th>Asesor</th>
-                    <th>Categoria</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
+@*<h3>Categoria A</h3>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Tema</th>
+				<th>Integrantes</th>
+				<th>Curso</th>
+				<th>Asesor</th>
+				<th>Categoria</th>
+				<th>Orden</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var m in Model)
+			{
+				if (ViewBag.lenght > count)
+				{
+					if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("A"))
+					{
+					<tr>
+						<th>@(m.IDCONCURSO)</th>
+						<th>@(m.TEMA)</th>
+						<th>@(m.INTEGRANTES)</th>
+						<th>@(m.CURSO)</th>
+						<th>@(m.ASESOR)</th>
+						<th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+						<th style="align-content:center">
+						@(ViewBag.array[count])
+						</th>
+					</tr>
+					}
+				}
+				count++;
+			}
+		</tbody>
+	</table>*@
 
-                <tr>
-                    <th>@(m.IDCONCURSO)</th>
-                    <th>@(m.TEMA)</th>
-                    <th>@(m.INTEGRANTES)</th>
-                    <th>@(m.CURSO)</th>
-                    <th>@(m.ASESOR)</th>
-                    <th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
-                    <th style="align-content:center">
-
-                    </th>
-                </tr>
-
-            </tbody>
-        </table>
-    }
-}
 <br /><br />
 
 <h3>Categoria B</h3>
-@foreach (var m in Model)
+
+@if (ViewBag.ListA != null)
 {
-    if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("B"))
-    {
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Tema</th>
-                    <th>Integrantes</th>
-                    <th>Curso</th>
-                    <th>Asesor</th>
-                    <th>Categoria</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                    <th>@(m.IDCONCURSO)</th>
-                    <th>@(m.TEMA)</th>
-                    <th>@(m.INTEGRANTES)</th>
-                    <th>@(m.CURSO)</th>
-                    <th>@(m.ASESOR)</th>
-                    <th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
-                    <th style="align-content:center">
-
-                    </th>
-                </tr>
-
-            </tbody>
-        </table>
-    }
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Tema</th>
+				<th>Integrantes</th>
+				<th>Curso</th>
+				<th>Asesor</th>
+				<th>Categoria</th>
+				<th>Orden</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var m in ViewBag.ListA)
+			{
+				//if (ViewBag.lenght1 > count1)
+				//{
+				//	if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("B"))
+				//	{
+				<tr>
+					@for (int i = 0; i < 6; i++)
+					{
+					<th>@(m)</th>
+					@*<th style="align-content:center">
+					@(ViewBag.array1[count1])
+				</th>*@
+					}
+				</tr>
+			@*}
+		}*@
+			count1++;
+			}
+		</tbody>
+	</table>
 }
+
 <br /><br />
 
-<h3>Categoria C</h3>
-@foreach (var m in Model)
-{
-    if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("C"))
-    {
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Tema</th>
-                    <th>Integrantes</th>
-                    <th>Curso</th>
-                    <th>Asesor</th>
-                    <th>Categoria</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
+@*<h3>Categoria C</h3>
 
-                <tr>
-                    <th>@(m.IDCONCURSO)</th>
-                    <th>@(m.TEMA)</th>
-                    <th>@(m.INTEGRANTES)</th>
-                    <th>@(m.CURSO)</th>
-                    <th>@(m.ASESOR)</th>
-                    <th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
-                    <th style="align-content:center">
-
-                    </th>
-                </tr>
-
-            </tbody>
-        </table>
-    }
-}
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Tema</th>
+				<th>Integrantes</th>
+				<th>Curso</th>
+				<th>Asesor</th>
+				<th>Categoria</th>
+				<th>Orden</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var m in Model)
+			{
+				if (ViewBag.lenght2 > count2)
+				{
+					if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("C"))
+					{
+						<tr>
+							<th>@(m.IDCONCURSO)</th>
+							<th>@(m.TEMA)</th>
+							<th>@(m.INTEGRANTES)</th>
+							<th>@(m.CURSO)</th>
+							<th>@(m.ASESOR)</th>
+							<th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+							<th style="align-content:center">
+								@(ViewBag.array2[count2])
+							</th>
+						</tr>
+					}
+				}
+				count2++;
+			}
+		</tbody>
+	</table>*@

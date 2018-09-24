@@ -92,6 +92,8 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
 			}
 		}
 
+        
+
         public void Eliminar()
         {
             try

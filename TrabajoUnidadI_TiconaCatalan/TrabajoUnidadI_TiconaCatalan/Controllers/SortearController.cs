@@ -15,45 +15,82 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
         public ActionResult Index(string criterio)
         {
             List<CONCURSO> lista = new List<CONCURSO>();
-            List<CATEGORIAS> catego = new List<CATEGORIAS>();
             List<int> posA = new List<int>();//para sorteo
             List<int> posB = new List<int>();//para sorteo
             List<int> posC = new List<int>();//para sorteo
-
-            lista = Concursos.Listar();
-            catego = Categorias.Listar();
-
+            
             Random rnd = new Random();
-            int num = 0, aux = 0;
-            foreach (var item in lista)
-            {
-                if (item.CATEGORIAS.NOMBRECATEGORIA.Equals("A"))
-                {
-                    num = rnd.Next(1,5);
-                    //ver si el numero generado se encuentra en la lista para que no se repita
-                    //while ()
-                    //{
+            
+            int cantA = Concursos.ListarA().Count();
 
-                    //}
-                    
-                }
-            }
-            foreach (var item in lista)
+            while (posA.Count() < cantA)
             {
-                if (item.CATEGORIAS.NOMBRECATEGORIA.Equals("B"))
+                int num = rnd.Next(cantA + 1);
+                if (!posA.Contains(num))
                 {
+                    if (num == 0)
+                    {
 
-                }
-            }
-            foreach (var item in lista)
-            {
-                if (item.CATEGORIAS.NOMBRECATEGORIA.Equals("C"))
-                {
-
+                    }
+                    else {
+                        posA.Add(num);
+                    }
                 }
             }
 
-            return View(Concursos.Listar());
+            //2
+            int cantB = Concursos.ListarB().Count();
+
+            while (posB.Count() < cantB)
+            {
+                int num = rnd.Next(cantB + 1);
+                if (!posB.Contains(num))
+                {
+                    if (num == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        posB.Add(num);
+                    }
+                }
+            }
+            //3
+            int cantC = Concursos.ListarC().Count();
+
+            while (posC.Count() < cantC)
+            {
+                int num = rnd.Next(cantC + 1);
+                if (!posC.Contains(num))
+                {
+                    if (num == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        posC.Add(num);
+                    }
+                }
+            }
+
+            int[]  arreglo = new int[posA.Count()];
+            ViewBag.array = arreglo = posA.ToArray();
+			ViewBag.lenght = arreglo.Count();
+			ViewBag.ListA = Concursos.ListarA().ToList();
+
+            int[] arreglo2 = new int[posB.Count()];
+            ViewBag.array1 = arreglo2 = posB.ToArray();
+			ViewBag.lenght1 = arreglo2.Count();
+			ViewData["ListB"] = posB;
+
+			int[] arreglo3 = new int[posC.Count()];
+            ViewBag.array2 = arreglo3 = posC.ToArray();
+			ViewBag.lenght2 = arreglo3.Count();
+			ViewData["ListC"] = posC;
+
+			return View(Concursos.Listar());
         }
     }
 }
