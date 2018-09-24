@@ -17,9 +17,9 @@
 
 				<select name="NOMBRECATEGORIA" class="form-control">
 					<option @(Model.NOMBRECATEGORIA == "" ? "Selected" : "") value="">-Seleccione-</option>
-					<option @(Model.NOMBRECATEGORIA == "Administrador" ? "Selected" : "") value="A">Categoria A</option>
-					<option @(Model.NOMBRECATEGORIA == "Supervisor" ? "Selected" : "") value="B">Categoria B</option>
-					<option @(Model.NOMBRECATEGORIA == "Usuario" ? "Selected" : "") value="C">Categoria</option>
+					<option @(Model.NOMBRECATEGORIA == "A" ? "Selected" : "") value="A">Categoria A</option>
+					<option @(Model.NOMBRECATEGORIA == "B" ? "Selected" : "") value="B">Categoria B</option>
+					<option @(Model.NOMBRECATEGORIA == "C" ? "Selected" : "") value="C">Categoria C</option>
 					@Html.ValidationMessageFor(x => x.NOMBRECATEGORIA, null, new { @class = "label label-danger" })
 				</select>
 			</div>
