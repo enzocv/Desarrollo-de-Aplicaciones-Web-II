@@ -49,7 +49,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
             return proyecto;
         }
@@ -112,7 +112,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
         }
 
@@ -129,7 +129,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
             return proyecto;
         }
@@ -146,7 +146,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
             return proyecto;
         }
@@ -163,7 +163,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
             return proyecto;
         }

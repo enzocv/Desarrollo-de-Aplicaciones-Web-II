@@ -41,7 +41,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
             return categorias;
         }
@@ -86,9 +86,9 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
 					db.SaveChanges();
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				throw;
+				throw new Exception(ex.Message);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace TrabajoUnidadI_TiconaCatalan.Models
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
         }
 

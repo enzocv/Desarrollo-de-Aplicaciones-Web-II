@@ -74,17 +74,19 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
                     }
                 }
             }
-
+            //CAT A
             int[]  arreglo = new int[posA.Count()];
             ViewBag.array = arreglo = posA.ToArray();
 			ViewBag.lenght = arreglo.Count();
 			ViewBag.ListA = Concursos.ListarA().ToList();
 
+            //CAT B
             int[] arreglo2 = new int[posB.Count()];
             ViewBag.array1 = arreglo2 = posB.ToArray();
 			ViewBag.lenght1 = arreglo2.Count();
 			ViewData["ListB"] = posB;
 
+            //CAT C
 			int[] arreglo3 = new int[posC.Count()];
             ViewBag.array2 = arreglo3 = posC.ToArray();
 			ViewBag.lenght2 = arreglo3.Count();

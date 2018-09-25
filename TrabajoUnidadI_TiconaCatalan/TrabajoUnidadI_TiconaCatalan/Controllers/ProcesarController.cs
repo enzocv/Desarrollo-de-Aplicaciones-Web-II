@@ -13,10 +13,10 @@ namespace TrabajoUnidadI_TiconaCatalan.Controllers
     {
 		private Persona persona = new Persona();
         // GET: Procesar
-        public ActionResult Index()
-        {
-            return View();
-        }
+//        public ActionResult Index()
+//        {
+//            return View();
+//        }
 		public /*async Task<ActionResult>*/ ActionResult ProcesosEnParalelo(/*string criterio*/)
 		{
 			//List<Persona> per = new List<Persona>();

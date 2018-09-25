@@ -7,26 +7,26 @@
     Concurso Proyectos
 </h2>
 <div class="text-right">
-    <a href="~/Concurso/AgregarEditar/"
-       class="btn btn-success pull-rigth">Nuevo Proyecto</a>
+    <a href="~/Concurso/AgregarEditar/" class="btn btn-success pull-rigth">Nuevo Proyecto</a>
+    <a href="~/Sortear/Index/" class="btn btn-xs btn-primary">Sortear Proyectos</a>
 </div>
 
 
 <table class="table table-responsive">
     <thead>
-        <tr>
-            <th >Id</th>
-            <th >Tema</th>
-            <th >Integrantes</th>
-            <th >Curso</th>
-            <th >Asesor</th>
-            <th >Categoria</th>
-            <th ></th>
-        </tr>
+    <tr>
+        <th >Id</th>
+        <th >Tema</th>
+        <th >Integrantes</th>
+        <th >Curso</th>
+        <th >Asesor</th>
+        <th >Categoria</th>
+        <th ></th>
+    </tr>
     </thead>
     <tbody>
-        @foreach (var m in Model)
-        {
+    @foreach (var m in Model)
+    {
         <tr>
             <th>@(m.IDCONCURSO)</th>
             <th>@(m.TEMA)</th>
@@ -40,6 +40,6 @@
                    onclick="return confirm('¿Esta Seguro que desea eliminar el registro?');">Eliminar</a>
             </th>
         </tr>
-        }
+    }
     </tbody>
 </table>

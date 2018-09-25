@@ -8,123 +8,123 @@
 	Sorteo de Proyectos
 </h2>
 <br><br />
-@*<h3>Categoria A</h3>
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Tema</th>
-				<th>Integrantes</th>
-				<th>Curso</th>
-				<th>Asesor</th>
-				<th>Categoria</th>
-				<th>Orden</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var m in Model)
+<a href="~/Concurso/Index/" class="btn btn-xs btn-primary">Volver</a>
+<br><br />
+<h3>Categoria A</h3>
+<table class="table table-hover">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Tema</th>
+		<th>Integrantes</th>
+		<th>Curso</th>
+		<th>Asesor</th>
+		<th>Categoria</th>
+		<th>Orden</th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var m in Model)
+	{
+		if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("A"))
+		{//<p>@m.IDCONCURSO</p>
+			if (Convert.ToInt32(ViewBag.lenght) > count)
 			{
-				if (ViewBag.lenght > count)
-				{
-					if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("A"))
-					{
-					<tr>
-						<th>@(m.IDCONCURSO)</th>
-						<th>@(m.TEMA)</th>
-						<th>@(m.INTEGRANTES)</th>
-						<th>@(m.CURSO)</th>
-						<th>@(m.ASESOR)</th>
-						<th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
-						<th style="align-content:center">
+				//<p>@m.IDCONCURSO</p>
+				<tr>
+					<th>@(m.IDCONCURSO)</th>
+					<th>@(m.TEMA)</th>
+					<th>@(m.INTEGRANTES)</th>
+					<th>@(m.CURSO)</th>
+					<th>@(m.ASESOR)</th>
+					<th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+					<th style="align-content:center">
 						@(ViewBag.array[count])
-						</th>
-					</tr>
-					}
-				}
+					</th>
+				</tr>
 				count++;
 			}
-		</tbody>
-	</table>*@
+		}
+	}
+	</tbody>
+</table>
 
-<br /><br />
-
+<br><br />
 <h3>Categoria B</h3>
-
-@if (ViewBag.ListA != null)
-{
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Tema</th>
-				<th>Integrantes</th>
-				<th>Curso</th>
-				<th>Asesor</th>
-				<th>Categoria</th>
-				<th>Orden</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var m in ViewBag.ListA)
+<table class="table table-hover">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Tema</th>
+		<th>Integrantes</th>
+		<th>Curso</th>
+		<th>Asesor</th>
+		<th>Categoria</th>
+		<th>Orden</th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var m in Model)
+	{
+		if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("B"))
+		{//<p>@m.IDCONCURSO</p>
+			if (Convert.ToInt32(ViewBag.lenght1) > count1)
 			{
-				//if (ViewBag.lenght1 > count1)
-				//{
-				//	if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("B"))
-				//	{
+				//<p>@m.IDCONCURSO</p>
 				<tr>
-					@for (int i = 0; i < 6; i++)
-					{
-					<th>@(m)</th>
-					@*<th style="align-content:center">
-					@(ViewBag.array1[count1])
-				</th>*@
-					}
+					<th>@(m.IDCONCURSO)</th>
+					<th>@(m.TEMA)</th>
+					<th>@(m.INTEGRANTES)</th>
+					<th>@(m.CURSO)</th>
+					<th>@(m.ASESOR)</th>
+					<th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+					<th style="align-content:center">
+						@(ViewBag.array1[count1])
+					</th>
 				</tr>
-			@*}
-		}*@
-			count1++;
+				count1++;
 			}
-		</tbody>
-	</table>
-}
+		}
+	}
+	</tbody>
+</table>
 
-<br /><br />
-
-@*<h3>Categoria C</h3>
-
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Tema</th>
-				<th>Integrantes</th>
-				<th>Curso</th>
-				<th>Asesor</th>
-				<th>Categoria</th>
-				<th>Orden</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var m in Model)
+<br><br />
+<h3>Categoria C</h3>
+<table class="table table-hover">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Tema</th>
+		<th>Integrantes</th>
+		<th>Curso</th>
+		<th>Asesor</th>
+		<th>Categoria</th>
+		<th>Orden</th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var m in Model)
+	{
+		if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("C"))
+		{//<p>@m.IDCONCURSO</p>
+			if (Convert.ToInt32(ViewBag.lenght2) > count2)
 			{
-				if (ViewBag.lenght2 > count2)
-				{
-					if (m.CATEGORIAS.NOMBRECATEGORIA.Equals("C"))
-					{
-						<tr>
-							<th>@(m.IDCONCURSO)</th>
-							<th>@(m.TEMA)</th>
-							<th>@(m.INTEGRANTES)</th>
-							<th>@(m.CURSO)</th>
-							<th>@(m.ASESOR)</th>
-							<th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
-							<th style="align-content:center">
-								@(ViewBag.array2[count2])
-							</th>
-						</tr>
-					}
-				}
+				//<p>@m.IDCONCURSO</p>
+				<tr>
+					<th>@(m.IDCONCURSO)</th>
+					<th>@(m.TEMA)</th>
+					<th>@(m.INTEGRANTES)</th>
+					<th>@(m.CURSO)</th>
+					<th>@(m.ASESOR)</th>
+					<th>@(m.CATEGORIAS.NOMBRECATEGORIA)</th>
+					<th style="align-content:center">
+						@(ViewBag.array2[count2])
+					</th>
+				</tr>
 				count2++;
 			}
-		</tbody>
-	</table>*@
+		}
+	}
+	</tbody>
+</table>
