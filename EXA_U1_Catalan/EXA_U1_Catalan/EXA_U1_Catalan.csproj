@@ -152,6 +152,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ClsCarga.cs" />
+    <Compile Include="Models\ClsCargaCurso.cs" />
+    <Compile Include="Models\ClsCargaDocente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

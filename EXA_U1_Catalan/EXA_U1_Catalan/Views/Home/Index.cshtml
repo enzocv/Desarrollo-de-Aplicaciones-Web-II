@@ -1,8 +1,19 @@
 ﻿@using EXA_U1_Catalan.Models
-@model IEnumerable<EXA_U1_Catalan.Models.ClsCarga>
+@model List<EXA_U1_Catalan.Models.ClsCarga>
 @{
     ViewBag.Title = "Home Page";
-    int cont = 1;
+    int cont = 1, x = 0, y = 0;
+    int[] horas = new int[ViewBag.total];
+    int[] creditos = new int[ViewBag.total];
+    string[] nombreCurso = new string[ViewBag.total];
+
+    foreach (var item in ViewData["CURSOS"] as List<ClsCargaCurso>)
+    {
+        horas[x] = item.horas;
+        creditos[x] = item.creditos;
+        nombreCurso[x] = item.nomCurso;
+        x++;
+    }
 }
 
 <div class="jumbotron">
@@ -24,11 +35,11 @@
         <tr>
             <td>@cont</td>
             <td>@Html.DisplayFor(modelItem => item.nomDocen)</td>
-            <td>@Html.DisplayFor(modelItem => item.nomCurso)</td>
-            <td>@Html.DisplayFor(modelItem => item.horas)</td>
-            <td>@Html.DisplayFor(modelItem => item.creditos)</td>
+            <td>@nombreCurso[y]</td>
+            <td>@horas[y]</td>
+            <td>@creditos[y]</td>
         </tr>
-            cont++;
+            cont++; y++;
         }
     </table>
 </div>

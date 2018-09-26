@@ -9,9 +9,14 @@ namespace EXA_U1_Catalan.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(ClsCarga objCarga)
+        public ActionResult Index(ClsCarga objDocente)
         {
-            return View(objCarga.ListarCarga());
+            ClsCargaCurso objCurso = new ClsCargaCurso();
+            ViewData["CURSOS"] = objCurso.ListarCargaCurso();
+            ViewBag.total = objCurso.ListarCargaCurso().Count();
+
+
+            return View(objDocente.ListarCarga());
         }
 
         public ActionResult About()

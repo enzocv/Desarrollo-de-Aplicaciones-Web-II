@@ -6,8 +6,8 @@
     <Apellido>Cardenas Paredes</Apellido>
     <email>cardenas@gmail.com</email>
   </docente>
-  <docente><codigo>2</codigo>
-    
+  <docente>
+    <codigo>2</codigo>
     <nombre>Pedro</nombre>
     <Apellido>Condori Marcavillaca</Apellido>
     <email>condori@gmail.com</email>

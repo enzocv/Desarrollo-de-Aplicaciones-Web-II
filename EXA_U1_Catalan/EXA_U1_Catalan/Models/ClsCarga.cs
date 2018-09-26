@@ -11,7 +11,6 @@ namespace EXA_U1_Catalan.Models
     public class ClsCarga
     {
         public String idcarga { get; set; }
-        public String idcurso { get; set; }
         public String iddocente { get; set; }
         public String nomCurso { get; set; }
         public String nomDocen { get; set; }
@@ -20,12 +19,6 @@ namespace EXA_U1_Catalan.Models
 
         public List<ClsCarga> ListarCarga()
         {
-            XDocument xmlDataC = XDocument
-                                .Load(HttpContext
-                                .Current
-                                .Server
-                                .MapPath("~/App_Data/cursos.xml"));
-
             XDocument xmlDataD = XDocument
                                 .Load(HttpContext
                                 .Current
@@ -48,13 +41,13 @@ namespace EXA_U1_Catalan.Models
                         select new ClsCarga
                         {
                             idcarga = car.Element("idcarga").Value,
-                            nomDocen = doce.Element("nombre").Value + ", " + doce.Element("Apellido").Value,
+                            iddocente = doce.Element("codigo").Value,
+                            nomDocen = doce.Element("nombre").Value + ", " + doce.Element("Apellido").Value
                             //nomCurso = 
                             //horas = Convert.ToInt32(cur.Element("horas").Value),
                             //creditos = Convert.ToInt32(cur.Element("creditos").Value)
                         }
                         ).ToList();
-
             return objCarga;
 
         }
