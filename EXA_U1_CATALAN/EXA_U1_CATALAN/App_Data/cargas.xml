@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cargas>
+    <carga>
+        <id>1</id>
+        <codigoDocente>doc-1</codigoDocente>
+        <codigoCurso>ING-101</codigoCurso>
+    </carga>
+    <carga>
+        <id>2</id>
+        <codigoDocente>doc-2</codigoDocente>
+        <codigoCurso>ING-102</codigoCurso>
+    </carga>
+    <carga>
+        <id>3</id>
+        <codigoDocente>doc-3</codigoDocente>
+        <codigoCurso>ING-103</codigoCurso>
+    </carga>
+</cargas>

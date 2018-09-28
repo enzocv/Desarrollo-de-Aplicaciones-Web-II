@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docentes>
+    <docente>
+        <codigo>doc-1</codigo>
+        <nombre>Luis</nombre>
+        <apellido>Cardenas Paredes</apellido>
+        <email>cardenas@gmail.com</email>
+    </docente>
+    <docente>
+        <codigo>doc-2</codigo>
+        <nombre>Pedro</nombre>
+        <apellido>Condori Marcavillaca</apellido>
+        <email>condori@gmail.com</email>
+    </docente>
+    <docente>
+        <codigo>doc-3</codigo>
+        <nombre>Juan</nombre>
+        <apellido>Ugaz Salaverry</apellido>
+        <email>ugaz@gmail.com</email>
+    </docente>
+</docentes>

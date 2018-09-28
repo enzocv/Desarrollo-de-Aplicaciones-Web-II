@@ -1,0 +1,45 @@
+@using EXA_U1_CATALAN.Models;
+@model IEnumerable<EXA_U1_CATALAN.Models.ClsCarga>
+@{ 
+    ViewBag.Title = "Carga";
+}
+
+    <h1>Trabajabajando con 3 archivos XML</h1>
+        @using (Html.BeginForm("Index", "Carga", FormMethod.Post))
+        {
+        <div class="form-group">
+            @Html.Label("Ingrese Criterio:")
+            @Html.TextBox("valor", "valor", new { @class = "form-control"  })
+        </div>
+        <div class="form-group">
+            <div class="radio">
+                @Html.RadioButton("criterio", "Curso", new { @checked = true })<spam>Curso</spam>
+            </div>
+            <div class="radio">
+                @Html.RadioButton("criterio", "Docente")<spam>Docente</spam>
+            </div>
+        </div>
+         <input type="submit" value="Buscar" class="btn btn-primary" />
+
+        }
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"># - </th>
+                    <th scope="col">Docente</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col">Horas</th>
+                    <th scope="col">Creditos</th>
+                </tr>
+            </thead>
+            @foreach (var carga in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => carga.id)</td>
+                    <td>@Html.DisplayFor(modelItem => carga.nombreDocente)</td>
+                    <td>@Html.DisplayFor(modelItem => carga.nombreCurso)</td>
+                    <td>@Html.DisplayFor(modelItem => carga.horasCurso)</td>
+                    <td>@Html.DisplayFor(modelItem => carga.creditosCurso)</td>
+                </tr>
+            }
+        </table>
